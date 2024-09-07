@@ -62,7 +62,7 @@ body {
 h1 {
     font-size: 3em;
     font-weight: bold;
-    background: linear-gradient(90deg, blue, yellow, blue);
+    background: linear-gradient(90deg, white, black, white);
     background-size: 300%;
     background-clip: text;
     -webkit-background-clip: text;
