@@ -89,7 +89,7 @@ h1::before {
     right: 0;
     bottom: -10px;
     height: 4px;
-    background: linear-gradient(135deg, yellow, black, white);
+    background: linear-gradient(135deg, white, black, white);
     border-radius: 4px;
     transition: width 0.3s ease;
     width: 0;
