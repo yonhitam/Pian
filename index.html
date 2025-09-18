@@ -1,23 +1,127 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Si jawa ngapain jirr</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Afian ZD</title>
+  <style>
+    body{
+      margin:0;
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      font-family:Inter, sans-serif;
+      color:#e6eef8;
+      background:url("https://picsum.photos/1600/900?blur=2") center/cover no-repeat fixed;
+      position:relative;
+    }
+    .bg-move{
+      position:absolute;
+      inset:0;
+      background:linear-gradient(120deg,
+        rgba(124,58,237,0.25),
+        rgba(6,182,212,0.25),
+        rgba(253,230,138,0.25));
+      background-size:300% 300%;
+      animation: movebg 10s ease infinite;
+      mix-blend-mode: overlay;
+    }
+    @keyframes movebg{
+      0%{background-position:0% 50%}
+      50%{background-position:100% 50%}
+      100%{background-position:0% 50%}
+    }
+    .overlay{
+      position:absolute;
+      inset:0;
+      background:rgba(15,23,36,0.55);
+      backdrop-filter:blur(3px);
+    }
+    .card{
+      position:relative;
+      z-index:2;
+      background:rgba(255,255,255,0.06);
+      padding:30px;
+      border-radius:18px;
+      text-align:center;
+      backdrop-filter:blur(10px);
+      box-shadow:0 8px 30px rgba(0,0,0,0.6);
+      max-width:600px;
+    }
+    h1{margin:0 0 15px;font-size:26px;opacity:.95}
+    p{margin:0 0 20px;font-size:15px;opacity:.85;line-height:1.6}
+
+    /* Tombol aesthetic */
+    .btn-wrapper{
+      text-align:center;
+      margin-top:20px;
+    }
+    .btn-wrapper a{
+      display:inline-block;
+      padding:12px 30px;
+      border-radius:999px;
+      text-decoration:none;
+      font-weight:700;
+      font-size:15px;
+      letter-spacing:0.6px;
+      background:linear-gradient(270deg,#7C3AED,#06B6D4,#FDE68A,#7C3AED);
+      background-size:300% 300%;
+      color:#041025;
+      position:relative;
+      overflow:hidden;
+      transition:transform .3s ease, box-shadow .3s ease;
+      animation:gradientMove 6s ease infinite;
+    }
+    @keyframes gradientMove{
+      0%{background-position:0% 50%}
+      50%{background-position:100% 50%}
+      100%{background-position:0% 50%}
+    }
+    .btn-wrapper a::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      border-radius:999px;
+      padding:2px;
+      background:linear-gradient(270deg,#7C3AED,#06B6D4,#FDE68A,#7C3AED);
+      background-size:300% 300%;
+      animation:gradientMove 6s ease infinite;
+      -webkit-mask:linear-gradient(#fff 0 0) content-box, 
+                    linear-gradient(#fff 0 0);
+      -webkit-mask-composite:xor;
+      mask-composite:exclude;
+      opacity:0;
+      transition:opacity .4s ease;
+    }
+    .btn-wrapper a:hover{
+      transform:scale(1.08);
+      box-shadow:0 0 25px rgba(124,58,237,.5),
+                 0 0 45px rgba(6,182,212,.4),
+                 0 0 65px rgba(253,230,138,.3);
+    }
+    .btn-wrapper a:hover::before{
+      opacity:1;
+    }
+    .btn-wrapper a:active{
+      transform:scale(0.96);
+      transition:transform .1s ease;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-      <h1>WEB WONG IRENG JAWA</h1>
-        <a href="https://wa.me/6282131902807?text=mabar+ml+woi" target="_blank">
-            <button class="cool-btn">CHET WA</button>
-        </a>
-        <a href="https://www.tiktok.com/@wongirengmambukecing344?_t=8pW8cfcrYEG&_r=1" target="_blank">
-            <button class="cool-btn">FOLOW TIKTOKKU</button>
-        </a>
+  <div class="bg-move"></div>
+  <div class="overlay"></div>
+
+  <main class="card">
+    <h1>Tugas Informatika</h1>
+    <p>
+      <h3>Afian Zahriel Dafatama</h3>
+   <br>   Klik tombol di bawah buat lanjut ke halaman informasi mekatronika.
+    </p>
+    <div class="btn-wrapper">
+      <a href="tugasinformatika.html">➡ LIHAT</a>
     </div>
-    
-    <img src="https://pomf2.lain.la/f/8mek0u58.jpg" alt="Cool Image" class="bottom-img">
-    
+  </main>
 </body>
 </html>
